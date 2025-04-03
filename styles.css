@@ -298,9 +298,66 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .header-separator {
+        display: none;
+    }
+    
+    .slogan h2 {
+        white-space: normal;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .logo-img {
+        max-height: 40px;
+    }
+    
+    nav ul {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+        padding: 5px 8px;
+    }
+    
+    main {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .about-section {
+        padding: 15px;
+    }
+
+    .company-info {
+        padding: 15px;
+    }
+
     .companies-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 15px;
+        padding: 0 10px;
     }
     
     .company-card img {
@@ -309,15 +366,37 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    .header-content {
+        padding: 8px;
+    }
+
+    .slogan h2 {
+        font-size: 0.85rem;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 4px 6px;
+    }
+
     .companies-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
     
     .about-section {
-        padding: 20px;
+        padding: 12px;
     }
     
     .company-info {
-        padding: 20px;
+        padding: 12px;
+    }
+
+    main {
+        padding: 15px;
     }
 }
