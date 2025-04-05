@@ -129,8 +129,12 @@ h1 {
 }
 
 p {
-    margin-bottom: 15px;
-    text-align: justify;
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.8;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .highlight {
@@ -141,10 +145,10 @@ p {
 }
 
 .highlight-text {
-    color: #c0392b;
     text-align: center;
+    color: black;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 .section-divider {
@@ -176,6 +180,7 @@ footer p {
 .page {
     min-height: 80vh;
     display: none;
+    width: 100%;
 }
 
 .page.active {
@@ -187,9 +192,7 @@ footer p {
 }
 
 .about-section {
-    background-color: #f8f9fa;
     padding: 30px;
-    border-radius: 8px;
     margin-bottom: 40px;
     width: 100%;
     max-width: 1200px;
@@ -198,10 +201,11 @@ footer p {
     align-items: center;
 }
 
-.about-section p {
+.about-section p:not(.highlight-text) {
     color: #2c3e50;
     line-height: 1.8;
     margin-bottom: 15px;
+    padding: 0 15px;
 }
 
 .company-title {
@@ -358,9 +362,9 @@ footer p {
         margin-bottom: 15px;
     }
 
-    p {
-        font-size: 0.95rem;
-        text-align: left;
+    p, #home p:not(.highlight-text):not(.more-partners), .highlight-text, #home h1 {
+        max-width: 95%;
+        padding: 0 15px;
     }
 
     .about-section {
@@ -520,9 +524,20 @@ footer p {
     }
 }
 
-.about-section .highlight-text {
-    color: #c0392b !important;
+#home p:not(.highlight-text):not(.more-partners) {
+    margin: 20px auto;
+    line-height: 1.8;
+    padding: 0;
+    color: #2c3e50;
+    max-width: 900px;
+    text-align: left;
+}
+
+#home h1 {
+    padding: 15px 20px;
+    margin: 25px auto;
     text-align: center;
-    font-weight: bold;
-    margin: 40px 0 20px 0;
+    color: #2980b9;
+    max-width: 900px;
+    line-height: 1.4;
 }
