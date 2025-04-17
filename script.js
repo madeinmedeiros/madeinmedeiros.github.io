@@ -1,22 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const pages = document.querySelectorAll('.page');
-    const logoLink = document.querySelector('.logo a'); // Seleciona o link da logo
+    const logoLink = document.querySelector('.logo a');
 
-    // Função para ativar a página correta
     const activatePage = (pageId) => {
         pages.forEach(page => {
             if (page.id === pageId) {
                 page.classList.add('active');
-                page.style.display = 'block'; // Garante que a página ativa seja exibida
+                page.style.display = 'block';
             } else {
                 page.classList.remove('active');
-                page.style.display = 'none'; // Garante que as outras páginas sejam escondidas
+                page.style.display = 'none';
             }
         });
     };
 
-    // Adiciona evento de clique nos links de navegação
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -26,14 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Adiciona evento de clique na logo para redirecionar à página inicial
     logoLink.addEventListener('click', (e) => {
         e.preventDefault();
-        activatePage('home'); // Ativa a página inicial
-        history.pushState(null, '', '#home'); // Atualiza o hash na URL
+        activatePage('home');
+        history.pushState(null, '', '#home');
     });
 
-    // Ativa a página correta com base no hash da URL
     const initialPageId = window.location.hash.substring(1) || 'home';
     activatePage(initialPageId);
 });

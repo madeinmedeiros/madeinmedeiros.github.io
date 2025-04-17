@@ -6,16 +6,14 @@
     --light-bg: #f5f6fa;
 }
 
-/* Remove margens e paddings globais */
 html, body {
     margin: 0;
     padding: 0;
-    scroll-behavior: auto; /* Garante que não haja rolagem suave */
+    scroll-behavior: auto;
 }
 
-/* Remove qualquer deslocamento causado por âncoras */
 :target {
-    scroll-margin-top: 0; /* Remove o deslocamento ao clicar em links de navegação */
+    scroll-margin-top: 0;
 }
 
 html {
@@ -42,8 +40,6 @@ header {
     background: linear-gradient(to right, #1e5799, #2989d8);
     padding: 15px 0;
     width: 100%;
-    /* Remover position: fixed */
-    /* top: 0; */ /* Não é mais necessário */
     z-index: 1000;
     height: auto;
 }
@@ -137,19 +133,18 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white; /* Define a cor dos links como branco */
+    color: white;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    text-decoration: underline;
 }
 
-/* Sobrescrever o estilo anterior dos links de navegação */
 .nav-link {
-    color: white !important; /* Força a cor branca */
+    color: white !important;
     text-decoration: none;
     font-weight: 500;
     padding: 8px 16px;
@@ -164,7 +159,7 @@ nav ul li a:hover {
 
 main {
     max-width: 1200px;
-    margin: 20px auto 0; /* Reduzir de 120px para 20px */
+    margin: 20px auto 0;
     padding: 2rem 20px;
     background-color: white;
     border-radius: 5px;
@@ -206,12 +201,10 @@ p {
     padding: 0 15px;
 }
 
-/* Adicione também um espaço entre as duas frases */
 .highlight-text + .highlight-text {
     margin-top: 5px;
 }
 
-/* Para garantir que fique dentro dos limites da página */
 #home .highlight-text {
     max-width: 900px;
     margin-left: auto;
@@ -242,15 +235,15 @@ footer p {
     font-weight: 300;
     opacity: 0.9;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: none; /* Remove a largura máxima */
+    max-width: none;
 }
 
 .page {
-    display: none; /* Esconde todas as páginas por padrão */
+    display: none;
 }
 
 .page.active {
-    display: block; /* Exibe apenas a página ativa */
+    display: block;
 }
 
 .company-info, .contact-info {
@@ -365,7 +358,6 @@ footer p {
     margin-top: 15px;
 }
 
-/* Responsividade para dispositivos móveis */
 @media (max-width: 1200px) {
     .companies-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -654,23 +646,22 @@ footer p {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 20px;
-    
 }
 
 #contato {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
-    min-height: 69vh; /* Reduz a altura mínima da seção */
-    padding-bottom: 20px; /* Adiciona espaçamento inferior */
+    align-items: center;
+    min-height: 69vh;
+    padding-bottom: 20px;
 }
 
 #contato .company-info {
-    flex: 0; /* Remove o comportamento de esticar */
-    max-width: 300px; /* Reduz ainda mais a largura máxima da caixa */
-    margin: 20px auto; /* Centraliza horizontalmente e adiciona espaçamento superior */
+    flex: 0;
+    max-width: 300px;
+    margin: 20px auto;
     background: var(--light-bg);
-    padding: 1rem; /* Reduz o padding interno */
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid #e0e0e0;
@@ -685,7 +676,7 @@ footer p {
 }
 
 #contato footer {
-    margin-top: auto; /* Empurra o footer para o final */
+    margin-top: auto;
     text-align: center;
     background-color: #3498db;
     color: white;
