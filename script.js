@@ -1,72 +1,39 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona todos os links de navegação e páginas
+document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const pages = document.querySelectorAll('.page');
-    const logo = document.querySelector('.logo a');
-    
-    // Função para mostrar a página correta
-    function showPage(pageId) {
+    const logoLink = document.querySelector('.logo a'); // Seleciona o link da logo
+
+    // Função para ativar a página correta
+    const activatePage = (pageId) => {
         pages.forEach(page => {
-            page.classList.remove('active');
             if (page.id === pageId) {
                 page.classList.add('active');
-            }
-        });
-    }
-
-    // Função para atualizar links ativos
-    function updateActiveLink(pageId) {
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('data-page') === pageId) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // Evento de clique na logo
-    logo.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Remove active de todas as páginas
-        pages.forEach(page => {
-            page.classList.remove('active');
-        });
-        // Adiciona active na página inicial
-        document.getElementById('home').classList.add('active');
-        
-        // Remove negrito de todos os links
-        navLinks.forEach(navLink => {
-            navLink.style.fontWeight = '500';
-        });
-        // Adiciona negrito no link "Início"
-        document.querySelector('[data-page="home"]').style.fontWeight = '700';
-        
-        // Rola para o topo da página
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    // Evento de clique nos links de navegação
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetPage = this.getAttribute('data-page');
-            
-            // Remove a classe 'active' de todas as páginas
-            pages.forEach(page => {
+                page.style.display = 'block'; // Garante que a página ativa seja exibida
+            } else {
                 page.classList.remove('active');
-            });
-            
-            // Adiciona a classe 'active' à página selecionada
-            document.getElementById(targetPage).classList.add('active');
-            
-            // Destaca o link ativo
-            navLinks.forEach(navLink => {
-                navLink.style.fontWeight = '500';
-            });
-            this.style.fontWeight = '700';
+                page.style.display = 'none'; // Garante que as outras páginas sejam escondidas
+            }
+        });
+    };
+
+    // Adiciona evento de clique nos links de navegação
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pageId = link.getAttribute('data-page');
+            activatePage(pageId);
+            history.pushState(null, '', `#${pageId}`);
         });
     });
+
+    // Adiciona evento de clique na logo para redirecionar à página inicial
+    logoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        activatePage('home'); // Ativa a página inicial
+        history.pushState(null, '', '#home'); // Atualiza o hash na URL
+    });
+
+    // Ativa a página correta com base no hash da URL
+    const initialPageId = window.location.hash.substring(1) || 'home';
+    activatePage(initialPageId);
 });
