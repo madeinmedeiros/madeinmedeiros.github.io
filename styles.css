@@ -42,10 +42,10 @@ header {
     background: linear-gradient(to right, #1e5799, #2989d8);
     padding: 15px 0;
     width: 100%;
-    position: fixed;
-    top: 0;
+    /* Remover position: fixed */
+    /* top: 0; */ /* Não é mais necessário */
     z-index: 1000;
-    height: auto; /* Permite que o header se ajuste ao conteúdo */
+    height: auto;
 }
 
 .header-content {
@@ -164,7 +164,7 @@ nav ul li a:hover {
 
 main {
     max-width: 1200px;
-    margin: 120px auto 0; /* Aumenta a margem superior */
+    margin: 20px auto 0; /* Reduzir de 120px para 20px */
     padding: 2rem 20px;
     background-color: white;
     border-radius: 5px;
